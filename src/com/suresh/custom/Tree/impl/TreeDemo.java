@@ -1,5 +1,7 @@
 package com.suresh.custom.Tree.impl;
 
+import java.util.Arrays;
+
 /**
 * 
 * Tree structure demo to :
@@ -63,10 +65,11 @@ public class TreeDemo {
 		//Unsorted set of values for demo
 		int[] listOfValues = {3,8,7,6,2,9,5};
 		
-		//Auto insert list of values into the tree
-		for(int i =0; i< listOfValues.length ;i++){
-			binaryTreeDemo.insertBinaryTreeNode(listOfValues[i]);
-		}
+		//Auto insert list of values into the tree	
+		//NOTE: This is Java 8 way of iterating and inserting into the Binary Tree
+		Arrays.stream(listOfValues).
+				forEach(p -> binaryTreeDemo.insertBinaryTreeNode(p));
+				
 		
 		System.out.println("Printing Tree (Sorted) - In-order traversal : ");
 		printTreeStructure(binaryTreeDemo.root);		
